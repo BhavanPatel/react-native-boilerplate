@@ -12,7 +12,7 @@ class Container extends Component {
     const themeColor = theme.colors;
 
     const barStyle =
-      Global.isDarkOrLight(themeColor) === "dark"
+      Global.isDarkOrLight(themeColor) !== "dark"
         ? "dark-content"
         : "light-content";
     return (
