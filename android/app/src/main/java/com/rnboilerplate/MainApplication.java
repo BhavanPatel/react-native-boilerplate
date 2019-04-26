@@ -1,4 +1,4 @@
-package com.educationwalkthrough;
+package com.rnboilerplate;
 
 import android.app.Application;
 
