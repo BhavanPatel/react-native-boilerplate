@@ -119,50 +119,39 @@ numbers, objects, strings, etc. Lodash’s modular methods are great for :
 
 ```
 .
-├── index.js
-├── package.json
 └── source
-├── app
-├── components
-│ ├── common
-│ │ ├── Card
-│ │ ├── CardHeader
-│ │ ├── Container
-│ └── controls
-│ ├── theme
-│ └── utils
-├── lib
-│ ├── apis
-│ ├── common
-│ ├── connection
-│ ├── local
-│ └── log
-├── localization
-│ └── strings
-├── navigation
-│ ├── config
-│ │ ├── Interpolator
-│ │ └── transitionConfig.js
-│ ├── index.js
-│ ├── routes.js
-│ └── services.js
-├── redux
-│ ├── actions
-│ ├── constants
-│ ├── reducers
-│ └── store
-│ └── index.js
-├── res
-│ ├── animation
-│ ├── fonts
-│ ├── images
-│ └── sounds
-├── screens
-│ ├── detail
-│ │ ├── index.js
-│ │ └── styles.js
-│ ├── home
-│ │ ├── index.js
-│ │ └── styles.js
-└── theme
+    ├── app
+    ├── components
+    │   ├── common
+    │   │   ├── Card
+    │   │   ├── CardHeader
+    │   │   └── Container
+    │   └── controls
+    │       ├── theme
+    │       └── utils
+    ├── lib
+    │   ├── apis
+    │   ├── common
+    │   ├── connection
+    │   ├── local
+    │   └── log
+    ├── localization
+    │   └── strings
+    ├── navigation
+    │   └── config
+    │       └── Interpolator
+    ├── redux
+    │   ├── actions
+    │   ├── constants
+    │   ├── reducers
+    │   └── store
+    ├── res
+    │   ├── animation
+    │   ├── fonts
+    │   ├── images
+    │   └── sounds
+    ├── screens
+    │   ├── detail
+    │   └── home
+    └── theme
 ```
