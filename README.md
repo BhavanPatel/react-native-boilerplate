@@ -17,7 +17,7 @@ Now, go to project folder then
 ```
 npm i
 ```
-Do not run `react-native link` after that boilerplate is already linked for you.
+Do not run `react-native link`  boilerplate is already linked for you.
 
 
 ## Rename
