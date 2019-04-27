@@ -6,7 +6,8 @@
     "lint": "eslint ./source",
     "test": "jest",
     "android": "react-native run-android",
-    "ios": "react-native run-ios --simulator='iPhone 6'",
+    "ios": "react-native run-ios",
+    "iphone6": "react-native run-ios --simulator='iPhone 6'",
     "start": "react-native start --reset-cache",
     "clean": "watchman watch-del-all && npm cache clean && cd android && ./gradlew clean && cd .."
   },
