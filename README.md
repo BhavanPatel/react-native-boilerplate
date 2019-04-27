@@ -104,11 +104,8 @@ numbers, objects, strings, etc. Lodash’s modular methods are great for :
 		- Along with redux added [Redux-Logger](https://github.com/LogRocket/redux-logger)  and [Redux-thunk](https://github.com/reduxjs/redux-thunk)
 
 - [react-native-device-info](https://github.com/react-native-community/react-native-device-info) : Device Information for React Native
-
 - [react-native-fast-image](https://github.com/DylanVann/react-native-fast-image): FastImage, performant React Native image component.
-
 - [react-native-keyboard-aware-scroll-view](https://github.com/APSL/react-native-keyboard-aware-scroll-view): A ScrollView component that handles keyboard appearance and automatically scrolls to focused TextInput.
-
 - [react-native-local-mongodb](https://github.com/antoniopresto/react-native-local-mongodb): react-native local mongodb storage.
 
 - [react native localization](https://github.com/stefalda/ReactNativeLocalization): Class to localize the ReactNative interface
@@ -117,3 +114,58 @@ numbers, objects, strings, etc. Lodash’s modular methods are great for :
 
 - [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons): Customizable Icons for React Native with support for NavBar/TabBar/ToolbarAndroid, image source and full styling
 
+
+## Project Structure
+
+```
+.
+├── App.js
+├── README.md
+├── app.json
+├── index.js
+├── package.json
+└── source
+├── app
+├── components
+│ ├── common
+│ │ ├── Card
+│ │ ├── CardHeader
+│ │ ├── Container
+│ └── controls
+│ ├── theme
+│ └── utils
+├── lib
+│ ├── apis
+│ ├── common
+│ ├── connection
+│ ├── local
+│ └── log
+├── localization
+│ └── strings
+├── navigation
+│ ├── config
+│ │ ├── Interpolator
+│ │ └── transitionConfig.js
+│ ├── index.js
+│ ├── routes.js
+│ └── services.js
+├── redux
+│ ├── actions
+│ ├── constants
+│ ├── reducers
+│ └── store
+│ └── index.js
+├── res
+│ ├── animation
+│ ├── fonts
+│ ├── images
+│ └── sounds
+├── screens
+│ ├── detail
+│ │ ├── index.js
+│ │ └── styles.js
+│ ├── home
+│ │ ├── index.js
+│ │ └── styles.js
+└── theme
+```
