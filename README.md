@@ -119,9 +119,6 @@ numbers, objects, strings, etc. Lodash’s modular methods are great for :
 
 ```
 .
-├── App.js
-├── README.md
-├── app.json
 ├── index.js
 ├── package.json
 └── source
