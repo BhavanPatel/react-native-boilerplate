@@ -55,7 +55,7 @@ for specific device
 ```
 npm run iphone6
 ```
-for specific device , you can customise command and simulator in project's **package.json** file
+for specific device , you can customize command and simulator in project's **package.json** file
 
 
 ## Commands
