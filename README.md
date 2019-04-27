@@ -87,3 +87,11 @@ npm run clean
 ```
 npm run lint
 ```
+
+## Project Dependencies
+
+There are already installed some dependencies to boost up your time and speed.
+
+- [apisauce](<[https://github.com/infinitered/apisauce](https://github.com/infinitered/apisauce)>) : axios + standardized errors + request/response transforms. - **Features** - low-fat wrapper for the amazing `axios` http client library - all responses follow the same flow: success and failure alike - responses have a `problem` property to help guide exception flow - attach functions that get called each request - attach functions that change all request or response data - detects connection issues (on React Native)
+- [lodash](<[https://lodash.com/](https://lodash.com/)>) : A modern JavaScript utility library delivering modularity, performance, & extras. - **Features** - Lodash makes JavaScript easier by taking the hassle out of working with arrays,  
+  numbers, objects, strings, etc. Lodash’s modular methods are great for : - Iterating arrays, objects, & strings - Manipulating & testing values - Creating composite functions
