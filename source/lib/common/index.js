@@ -1,3 +1,5 @@
+import strings from "@language";
+
 class Global {}
 
 /**
@@ -11,6 +13,13 @@ Global.getRandom = length => {
     text += chars.charAt(Math.floor(Math.random() * chars.length));
   }
   return text;
+};
+
+/**
+ *  Set language
+ */
+Global.setLanguage = code => {
+  strings.setLanguage(code);
 };
 
 /**

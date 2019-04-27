@@ -1,15 +1,27 @@
+//Global Libraries
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { View } from "react-native";
 import PropTypes from "prop-types";
 
+//Local Libraries
 import Global from "@common-functions";
 import navigation from "@navigation/services";
+import strings from "@language";
 
+//Components
 import { Container, Card, CardHeader } from "../../components/common";
-import { Icon, Text, Button, Border, Scroll } from "../../components/controls";
+import {
+  Icon,
+  Text,
+  Button,
+  Border,
+  Scroll,
+  Image
+} from "../../components/controls";
 
-import { colors } from "../../theme";
+//Styling
+import { colors, images } from "../../theme";
 import styles from "./styles";
 
 class Detail extends Component {
@@ -29,7 +41,7 @@ class Detail extends Component {
   ////// VIEW ////////////
   render() {
     return (
-      <Container>
+      <Container status="dark">
         {this.renderNavbar()}
         {this.renderContent()}
       </Container>
@@ -55,10 +67,12 @@ class Detail extends Component {
         <Card>
           <CardHeader>
             <Text color={colors.black} bold size={25}>
-              Card Detail
+              {strings.cardDetail}
             </Text>
           </CardHeader>
+          <Image uri={images.user_img_url} style={styles.icon} />
           <Text color={colors.black}>{Global.getRandom(500)}</Text>
+          <Image file={images.user_img} style={styles.icon} />
         </Card>
       </View>
     </Scroll>

@@ -1,18 +1,27 @@
+//Global Libraries
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { View } from "react-native";
 import PropTypes from "prop-types";
 
+//Local Libraries
+import Global from "@common-functions";
 import apis from "@apis";
 import local from "@local-db";
 import navigation from "@navigation/services";
+import log from "@log";
+import strings from "@language";
 
+//Redux
 import { setTheme } from "../../redux/actions/theme.actions";
+import { setLanguage } from "../../redux/actions/language.actions";
 
+//Components
 import { Container, Card } from "../../components/common";
 import { Icon, Text, Button, Border, Scroll } from "../../components/controls";
 
-import { colors } from "../../theme";
+//Styling
+import { colors, themes } from "../../theme";
 import styles from "./styles";
 
 class Home extends Component {
@@ -28,6 +37,7 @@ class Home extends Component {
   componentDidMount() {
     this.getSavedTheme();
     this.getData();
+    this.setLanguage();
   }
 
   ///////////////////////
@@ -37,16 +47,18 @@ class Home extends Component {
       .getCities()
       .then(res => {
         if (res.ok) {
+          log.success("API Calling Success :-", res.data);
           this.setState({
             cities: res.data.cities,
             citiesCount: res.data.count
           });
         } else {
-          console.log(res.problem);
+          log.error("API Calling Failed :-", res.problem);
+          log.info("API Calling Failed Detail:-", res);
         }
       })
       .catch(err => {
-        console.log(err);
+        log.error("API Calling Failed :-", err);
       });
   };
 
@@ -59,7 +71,16 @@ class Home extends Component {
     this.setState({ loading: false });
   };
 
-  goToDetail = title => {
+  setLanguage = () => {
+    const { dispatch } = this.props;
+    const code = "en";
+    Global.setLanguage(code);
+    dispatch(setLanguage(code));
+  };
+
+  goToDetail = (title, index) => {
+    const { dispatch } = this.props;
+    dispatch(setTheme(themes[index]));
     navigation.detail({ title: title });
   };
 
@@ -74,7 +95,7 @@ class Home extends Component {
       return <Container>{this.renderLoading()}</Container>;
     }
     return (
-      <Container>
+      <Container status="dark">
         {this.renderNavbar()}
         {this.renderContent()}
       </Container>
@@ -85,7 +106,7 @@ class Home extends Component {
   renderLoading = () => (
     <View style={styles.loader}>
       <Text bold color={colors.black} size={44}>
-        Loading...
+        {strings.loading}
       </Text>
     </View>
   );
@@ -94,7 +115,7 @@ class Home extends Component {
   renderNavbar = () => (
     <Border theme="navbar" transparent bstyle={styles.header}>
       <Text bold color={colors.black} size={25}>
-        Welcome
+        {strings.welcome}
       </Text>
       <Button theme="navbar.right" onPress={navigation.detail}>
         <Icon color={colors.black} name="mt bubble-chart" size={30} />
@@ -107,20 +128,25 @@ class Home extends Component {
     return (
       <Scroll>
         <View style={styles.container}>
-          {this.renderCard("Detail")}
-          {this.renderCard("Pure Detail")}
-          {this.renderCard("Click Here")}
+          {this.renderCard(strings.detail, 0)}
+          {this.renderCard(strings.pureDetail, 1)}
+          {this.renderCard(strings.clickHere, 2)}
         </View>
       </Scroll>
     );
   };
 
   // Card
-  renderCard = name => {
+  renderCard = (name, index) => {
+    const { colors } = this.props.theme;
     return (
-      <Card style={styles.card} button onPress={() => this.goToDetail(name)}>
+      <Card
+        style={styles.card}
+        button
+        onPress={() => this.goToDetail(name, index)}
+      >
         <View style={styles.button}>
-          <Text bold color={colors.black} size={50}>
+          <Text bold color={colors} size={50}>
             {name}
           </Text>
         </View>
@@ -133,7 +159,8 @@ class Home extends Component {
 }
 
 Home.propTypes = {
-  dispatch: PropTypes.func
+  dispatch: PropTypes.func,
+  theme: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 };
 
 const mapStateToProps = state => ({

@@ -15,6 +15,7 @@ const Scroll = props => {
     style,
     contentStyle,
     children,
+    showScroll,
     ...otherProps
   } = props;
 
@@ -31,6 +32,8 @@ const Scroll = props => {
   return (
     <KeyboardAwareScrollView
       style={newStyle}
+      showsHorizontalScrollIndicator={showScroll}
+      showsVerticalScrollIndicator={showScroll}
       contentContainerStyle={styles.style("scroll.container")}
       {...otherProps}
     >
@@ -43,10 +46,13 @@ Scroll.propTypes = {
   theme: PropTypes.any,
   style: PropTypes.any,
   center: PropTypes.bool,
+  showScroll: PropTypes.bool,
   end: PropTypes.bool,
   contentStyle: PropTypes.any,
   children: PropTypes.node.isRequired
 };
-Scroll.defaultProps = {};
+Scroll.defaultProps = {
+  showScroll: false
+};
 
 export default Scroll;

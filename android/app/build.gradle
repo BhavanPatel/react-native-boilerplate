@@ -138,6 +138,8 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-localization')
+    implementation project(':react-native-fast-image')
     implementation project(':react-native-vector-icons')
     implementation project(':react-native-device-info')
     implementation fileTree(dir: "libs", include: ["*.jar"])

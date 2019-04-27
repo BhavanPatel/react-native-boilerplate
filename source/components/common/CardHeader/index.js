@@ -1,7 +1,9 @@
+//Global Libraries
 import React from "react";
 import { View } from "react-native";
 import PropTypes from "prop-types";
 
+//Styling
 import { bs } from "../../../theme";
 
 const CardHeader = props => {

@@ -1,4 +1,5 @@
 import { NetInfo } from "react-native";
+import log from "@log";
 
 class connection {}
 
@@ -7,7 +8,7 @@ connection.status = () => {
     try {
       resolve(NetInfo.getConnectionInfo());
     } catch (err) {
-      console.log("Connection Error :-", err);
+      log.error("Connection Error :-", err);
       reject(err);
     }
   });
@@ -15,14 +16,14 @@ connection.status = () => {
 
 connection.startListener = () => {
   function handleFirstConnectivityChange(connectionInfo) {
-    console.log("Start Listener", connectionInfo.type);
+    log.info("Start Listener", connectionInfo.type);
   }
   NetInfo.addEventListener("connectionChange", handleFirstConnectivityChange);
 };
 
 connection.removeListener = () => {
   function handleFirstConnectivityChange(connectionInfo) {
-    console.log("Remove Listener", connectionInfo.type);
+    log.info("Remove Listener", connectionInfo.type);
   }
   NetInfo.removeEventListener(
     "connectionChange",

@@ -1,6 +1,8 @@
-import * as types from '../constants/theme.const';
+import * as types from "../constants/theme.const";
 
-export const setTheme = (state) => ({
-	type: types.SET_THEME,
-	state,
-});
+export const setTheme = state => {
+  return {
+    type: types.SET_THEME,
+    state
+  };
+};

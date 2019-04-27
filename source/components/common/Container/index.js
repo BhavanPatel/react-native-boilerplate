@@ -1,23 +1,32 @@
+//Global Libraries
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { StatusBar, SafeAreaView } from "react-native";
 import PropTypes from "prop-types";
 
+//Global Libraries
+import Global from "@common-functions";
+
+//Styling
 import { bs } from "../../../theme";
-import Global from "../../../lib/common";
 
 class Container extends Component {
   render() {
-    const { children, theme } = this.props;
+    const { children, theme, status, statusBgColor } = this.props;
     const themeColor = theme.colors;
+    const dark = "dark-content";
+    const light = "light-content";
 
-    const barStyle =
-      Global.isDarkOrLight(themeColor) !== "dark"
-        ? "dark-content"
-        : "light-content";
+    const barStylePro = status === "dark" ? dark : light;
+    const barStyleDef =
+      Global.isDarkOrLight(themeColor) !== "dark" ? dark : light;
+
     return (
       <SafeAreaView style={bs.flex}>
-        <StatusBar backgroundColor={themeColor} barStyle={barStyle} />
+        <StatusBar
+          backgroundColor={statusBgColor ? statusBgColor : themeColor}
+          barStyle={status ? barStylePro : barStyleDef}
+        />
         {children}
       </SafeAreaView>
     );
@@ -26,7 +35,9 @@ class Container extends Component {
 
 Container.propTypes = {
   children: PropTypes.node.isRequired,
-  theme: PropTypes.any
+  theme: PropTypes.any,
+  status: PropTypes.string,
+  statusBgColor: PropTypes.string
 };
 
 const mapStateToProps = state => ({

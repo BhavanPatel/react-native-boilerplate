@@ -1,15 +1,16 @@
+import colors from "./colors";
 const themes = [
   {
-    name: "SEA BLUE",
-    colors: "#2b5876"
+    name: "BLUE",
+    colors: colors.sea_blue
   },
   {
-    name: "STELLAR",
-    colors: "#7474BF"
+    name: "VIOLET",
+    colors: colors.cool_violet
   },
   {
-    name: "SUN DANCE",
-    colors: "#FE8C00"
+    name: "ORANGE",
+    colors: colors.sun_dance
   }
 ];
 

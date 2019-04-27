@@ -1,4 +1,4 @@
-import { bs } from "../../theme";
+import { bs, sizes } from "../../theme";
 
 const styles = {
   header: {
@@ -13,6 +13,10 @@ const styles = {
     ...bs.flex_row,
     ...bs.between_center,
     ...bs.full_width
+  },
+  icon: {
+    height: sizes.em(50),
+    width: sizes.em(50)
   }
 };
 export default styles;

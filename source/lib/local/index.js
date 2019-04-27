@@ -1,3 +1,4 @@
+import log from "@log";
 import _local from "./config";
 
 class local {}
@@ -15,15 +16,15 @@ local.insert = (type, data) => {
     try {
       _local.update(_type, _data, _update, (err, newDoc) => {
         if (!err) {
-          console.log("Database updated/inserted :-", newDoc);
+          log.success("Database updated/inserted :-", newDoc);
           resolve(newDoc);
         } else {
-          console.log("Database Error:-", err);
+          log.error("Database Error:-", err);
           reject(err);
         }
       });
     } catch (err) {
-      console.log("Database Error:-", err);
+      log.error("Database Error:-", err);
       reject(err);
     }
   });
@@ -40,15 +41,15 @@ local.getOne = type => {
     try {
       _local.findOne(_type, (err, docs) => {
         if (!err) {
-          console.log("Database fetched :-", docs);
+          log.success("Database fetched :-", docs);
           resolve(docs);
         } else {
-          console.log("Database Error:-", err);
+          log.error("Database Error:-", err);
           reject(err);
         }
       });
     } catch (err) {
-      console.log("Database Error:-", err);
+      log.error("Database Error:-", err);
       reject(err);
     }
   });
@@ -65,15 +66,15 @@ local.get = type => {
     try {
       _local.find(_type, (err, docs) => {
         if (!err) {
-          console.log("Database fetched :-", docs);
+          log.success("Database fetched :-", docs);
           resolve(docs);
         } else {
-          console.log("Database Error:-", err);
+          log.error("Database Error:-", err);
           reject(err);
         }
       });
     } catch (err) {
-      console.log("Database Error:-", err);
+      log.error("Database Error:-", err);
       reject(err);
     }
   });
@@ -90,15 +91,15 @@ local.clean = () => {
     try {
       _local.remove(_data, _all, (err, nosRecord) => {
         if (!err) {
-          console.log("Database deleted no of records :-", nosRecord);
+          log.success("Database deleted no of records :-", nosRecord);
           resolve(nosRecord);
         } else {
-          console.log("Database Error:-", err);
+          log.error("Database Error:-", err);
           reject(err);
         }
       });
     } catch (err) {
-      console.log("Database Error:-", err);
+      log.error("Database Error:-", err);
       reject(err);
     }
   });
@@ -116,15 +117,15 @@ local.cleanOne = type => {
     try {
       _local.remove(_type, _data, _all, (err, nosRecord) => {
         if (!err) {
-          console.log("Database deleted no of records :-", nosRecord);
+          log.success("Database deleted no of records :-", nosRecord);
           resolve(nosRecord);
         } else {
-          console.log("Database Error:-", err);
+          log.error("Database Error:-", err);
           reject(err);
         }
       });
     } catch (err) {
-      console.log("Database Error:-", err);
+      log.error("Database Error:-", err);
       reject(err);
     }
   });

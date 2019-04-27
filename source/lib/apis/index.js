@@ -1,3 +1,4 @@
+import log from "@log";
 import api from "./config";
 
 class apis {}
@@ -8,7 +9,7 @@ apis.call = (url, params) => {
         resolve(res);
       });
     } catch (err) {
-      console.log("API Error:-", err);
+      log.error("API calling error:-", err);
       reject(err);
     }
   });

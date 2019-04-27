@@ -1,7 +1,9 @@
+//Global Libraries
 import React from "react";
 import { View, TouchableOpacity } from "react-native";
 import PropTypes from "prop-types";
 
+//Styling
 import { bs, sizes, colors } from "../../../theme";
 
 const Card = props => {

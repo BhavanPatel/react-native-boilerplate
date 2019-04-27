@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00608C44AA86479B9903D100 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9938B30835B9438B877DEFE4 /* libRNVectorIcons.a */; };
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
@@ -55,6 +54,8 @@
 		F314765C2B464FDABB5B6E84 /* Nunito-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02EF832F9B5B426A88680EAC /* Nunito-Italic.ttf */; };
 		F61BEC4CA8684BC7A58D2C6E /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F10B42532AC4AC09BF47040 /* Octicons.ttf */; };
 		F6E43D39102D47A0B1C8DE91 /* Nunito-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50A53EA2ED0E44A8928A121F /* Nunito-BoldItalic.ttf */; };
+		C1641B96A1984C9E9700C614 /* libFastImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC1D19F0F104F5EB35C6411 /* libFastImage.a */; };
+		4CD785E4E7E443DEA3DE098C /* libReactNativeLocalization.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ADB0E27F4BC4FC4B6E19C29 /* libReactNativeLocalization.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -378,6 +379,10 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		ED5D5ADB03D1463CAB2810DF /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		0C21AE7DE2B3451A9FCA8FA0 /* FastImage.xcodeproj */ = {isa = PBXFileReference; name = "FastImage.xcodeproj"; path = "../node_modules/react-native-fast-image/ios/FastImage.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		DFC1D19F0F104F5EB35C6411 /* libFastImage.a */ = {isa = PBXFileReference; name = "libFastImage.a"; path = "libFastImage.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		81297E180F084ADF8DEB895C /* ReactNativeLocalization.xcodeproj */ = {isa = PBXFileReference; name = "ReactNativeLocalization.xcodeproj"; path = "../node_modules/react-native-localization/ReactNativeLocalization.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		5ADB0E27F4BC4FC4B6E19C29 /* libReactNativeLocalization.a */ = {isa = PBXFileReference; name = "libReactNativeLocalization.a"; path = "libReactNativeLocalization.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -400,6 +405,8 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				5025851B222E4F4688ED2F83 /* libRNDeviceInfo.a in Frameworks */,
 				00608C44AA86479B9903D100 /* libRNVectorIcons.a in Frameworks */,
+				C1641B96A1984C9E9700C614 /* libFastImage.a in Frameworks */,
+				4CD785E4E7E443DEA3DE098C /* libReactNativeLocalization.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +583,8 @@
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				C65C0903EEB64009B309A661 /* RNDeviceInfo.xcodeproj */,
 				0D63553549BA4A4382F966C9 /* RNVectorIcons.xcodeproj */,
+				0C21AE7DE2B3451A9FCA8FA0 /* FastImage.xcodeproj */,
+				81297E180F084ADF8DEB895C /* ReactNativeLocalization.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1112,11 +1121,15 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-device-info/ios/RNDeviceInfo",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)/../node_modules/react-native-fast-image/ios/FastImage/**",
+					"$(SRCROOT)/../node_modules/react-native-localization",
 				);
 				INFOPLIST_FILE = RNBoilerplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/RNBoilerplate\"",
+					"\"$(SRCROOT)/RNBoilerplate\"",
 					"\"$(SRCROOT)/RNBoilerplate\"",
 					"\"$(SRCROOT)/RNBoilerplate\"",
 				);
@@ -1140,11 +1153,15 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-device-info/ios/RNDeviceInfo",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)/../node_modules/react-native-fast-image/ios/FastImage/**",
+					"$(SRCROOT)/../node_modules/react-native-localization",
 				);
 				INFOPLIST_FILE = RNBoilerplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/RNBoilerplate\"",
+					"\"$(SRCROOT)/RNBoilerplate\"",
 					"\"$(SRCROOT)/RNBoilerplate\"",
 					"\"$(SRCROOT)/RNBoilerplate\"",
 				);
