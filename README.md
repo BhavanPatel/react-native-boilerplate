@@ -76,7 +76,7 @@ npm run lint
 ## Project Dependencies
 There are already installed some dependencies to boost up your time and speed.
 
-- [apisauce](https://github.com/infinitered/apisauce) : axios + standardized errors + request/response transforms.
+- [Apisauce](https://github.com/infinitered/apisauce) : axios + standardized errors + request/response transforms.
 	- **Features**
 		-   low-fat wrapper for the amazing  `axios`  http client library
 		-   all responses follow the same flow: success and failure alike
@@ -85,11 +85,35 @@ There are already installed some dependencies to boost up your time and speed.
 		-   attach functions that change all request or response data
 		-   detects connection issues (on React Native)
 	
-- [lodash](https://lodash.com/) : A modern JavaScript utility library delivering modularity, performance, & extras.
+- [Lodash](https://lodash.com/) : A modern JavaScript utility library delivering modularity, performance, & extras.
 	- **Features**
 		- Lodash makes JavaScript easier by taking the hassle out of working with arrays,  
 numbers, objects, strings, etc. Lodash’s modular methods are great for :
 			-  Iterating arrays, objects, & strings
 			-  Manipulating & testing values
 			-  Creating composite functions
+
+- [Moment](https://momentjs.com/):  Parse, validate, manipulate, and display dates and times in JavaScript.
+	- **Features**
+		- A lightweight JavaScript date library for parsing, validating, manipulating, and formatting dates.
+
+- [Redux](https://redux.js.org/):  A predictable state container for JavaScript apps.
+	- **Features**
+		- One of the most recommended state management library for react-native
+		- It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test.
+		- Along with redux added [Redux-Logger](https://github.com/LogRocket/redux-logger)  and [Redux-thunk](https://github.com/reduxjs/redux-thunk)
+
+- [react-native-device-info](https://github.com/react-native-community/react-native-device-info) : Device Information for React Native
+
+- [react-native-fast-image](https://github.com/DylanVann/react-native-fast-image): FastImage, performant React Native image component.
+
+- [react-native-keyboard-aware-scroll-view](https://github.com/APSL/react-native-keyboard-aware-scroll-view): A ScrollView component that handles keyboard appearance and automatically scrolls to focused TextInput.
+
+- [react-native-local-mongodb](https://github.com/antoniopresto/react-native-local-mongodb): react-native local mongodb storage.
+
+- [react native localization](https://github.com/stefalda/ReactNativeLocalization): Class to localize the ReactNative interface
+
+- [react-native-router-flux](https://github.com/aksonov/react-native-router-flux): The first declarative React Native router
+
+- [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons): Customizable Icons for React Native with support for NavBar/TabBar/ToolbarAndroid, image source and full styling
 
