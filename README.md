@@ -3,6 +3,16 @@
 > Thanks for looking this! Right now project is in Development mode.
 > Stable version will be release soon as possible.
 
+# List of Content
+
+- [Setup ](#setup)
+- [Rename Project](#rename)
+- [Run](#run)
+- [Default Commands](#commands)
+- [Project Dependencies](#project-dependencies)
+- [Project Structure](#project-structure)
+- [To Do](#to-do-in-this-project)
+
 ## Setup
 
 Follow the steps to setup boilerplate for your project
