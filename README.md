@@ -152,3 +152,17 @@ There are already installed some dependencies to boost up your time and speed.
     │   └── landing
     └── theme
 ```
+
+## To Do In this project
+
+- [x] Basic Structure
+- [x] Basic Code Example
+- [ ] Take Cup Of Coffee..!!!
+- [ ] Simplified Components
+- [ ] Documentation of each things
+- [ ] Style guide
+- [ ] Beta release
+- [ ] Final release
+- [ ] Same boilerplate with mobx,react-native-navigation
+- [ ] Same boilerplate with redux,react-navigation
+- [ ] Same boilerplate with mobx,react-navigation
