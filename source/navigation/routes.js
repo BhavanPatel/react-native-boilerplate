@@ -1,6 +1,6 @@
 import React from "react";
 import { Actions, Scene } from "react-native-router-flux";
-import { Home, Detail } from "../screens";
+import { Landing, Home, Detail } from "../screens";
 import { transitionCustomConfig } from "./config/transitionConfig";
 
 const interpolator = {
@@ -8,7 +8,8 @@ const interpolator = {
 };
 const routes = Actions.create(
   <Scene key="app" hideNavBar transitionConfig={() => interpolator}>
-    <Scene key="home" component={Home} initial />
+    <Scene key="landing" component={Landing} initial />
+    <Scene key="home" component={Home} />
     <Scene key="detail" component={Detail} />
   </Scene>
 );

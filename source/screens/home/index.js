@@ -5,39 +5,30 @@ import { View } from "react-native";
 import PropTypes from "prop-types";
 
 //Local Libraries
-import Global from "@common-functions";
 import apis from "@apis";
-import local from "@local-db";
 import navigation from "@navigation/services";
 import log from "@log";
 import strings from "@language";
 
-//Redux
-import { setTheme } from "../../redux/actions/theme.actions";
-import { setLanguage } from "../../redux/actions/language.actions";
-
 //Components
-import { Container, Card, Loader } from "../../components/common";
+import { Container, Card } from "../../components/common";
 import { Icon, Text, Button, Border, Scroll } from "../../components/controls";
 
 //Styling
-import { colors, themes } from "../../theme";
+import { colors } from "../../theme";
 import styles from "./styles";
 
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: true,
       cities: [],
       citiesCount: 0
     };
   }
 
   componentDidMount() {
-    this.getSavedTheme();
     this.getData();
-    this.setLanguage();
   }
 
   ///////////////////////
@@ -62,27 +53,7 @@ class Home extends Component {
       });
   };
 
-  getSavedTheme = async () => {
-    const { dispatch } = this.props;
-    const localTheme = await local.getOne("appTheme");
-    if (localTheme) {
-      dispatch(setTheme(localTheme.data));
-    }
-    setTimeout(() => {
-      this.setState({ loading: false });
-    }, 2500);
-  };
-
-  setLanguage = () => {
-    const { dispatch } = this.props;
-    const code = "en";
-    Global.setLanguage(code);
-    dispatch(setLanguage(code));
-  };
-
-  goToDetail = (title, index) => {
-    const { dispatch } = this.props;
-    dispatch(setTheme(themes[index]));
+  goToDetail = title => {
     navigation.detail({ title: title });
   };
 
@@ -91,25 +62,6 @@ class Home extends Component {
 
   ////////////////////////
   ////// VIEW ////////////
-  render() {
-    const loading = this.state.loading;
-    if (loading) {
-      return <Container>{this.renderLoading()}</Container>;
-    }
-    return (
-      <Container status="dark">
-        {this.renderNavbar()}
-        {this.renderContent()}
-      </Container>
-    );
-  }
-
-  // Loading
-  renderLoading = () => (
-    <View style={styles.loader}>
-      <Loader />
-    </View>
-  );
 
   // Navigation Bar
   renderNavbar = () => (
@@ -128,23 +80,19 @@ class Home extends Component {
     return (
       <Scroll>
         <View style={styles.container}>
-          {this.renderCard(strings.detail, 0)}
-          {this.renderCard(strings.pureDetail, 1)}
-          {this.renderCard(strings.clickHere, 2)}
+          {this.renderCard(strings.detail)}
+          {this.renderCard(strings.pureDetail)}
+          {this.renderCard(strings.clickHere)}
         </View>
       </Scroll>
     );
   };
 
   // Card
-  renderCard = (name, index) => {
+  renderCard = name => {
     const { colors } = this.props.theme;
     return (
-      <Card
-        style={styles.card}
-        button
-        onPress={() => this.goToDetail(name, index)}
-      >
+      <Card style={styles.card} button onPress={() => this.goToDetail(name)}>
         <View style={styles.button}>
           <Text bold color={colors} size={50}>
             {name}
@@ -154,6 +102,14 @@ class Home extends Component {
     );
   };
 
+  render() {
+    return (
+      <Container>
+        {this.renderNavbar()}
+        {this.renderContent()}
+      </Container>
+    );
+  }
   ////// VIEW ////////////
   ////////////////////////
 }

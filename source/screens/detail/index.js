@@ -21,7 +21,7 @@ import {
 } from "../../components/controls";
 
 //Styling
-import { colors, images } from "../../theme";
+import { bs, colors, images } from "../../theme";
 import styles from "./styles";
 
 class Detail extends Component {
@@ -50,14 +50,18 @@ class Detail extends Component {
 
   // Navigation Bar
   renderNavbar = () => (
-    <Border theme="navbar" transparent bstyle={styles.header}>
-      <Button theme="navbar.left" onPress={navigation.pop}>
-        <Icon color={colors.black} name="mt chevron-left" size={30} />
-      </Button>
-      <Text bold color={colors.black} size={25}>
-        {this.state.title}
-      </Text>
-    </Border>
+    <View>
+      <Border theme="navbar" transparent bstyle={styles.header}>
+        <Button theme="navbar.left" onPress={navigation.pop}>
+          <Icon color={colors.black} name="io ios-arrow-round-back" size={30} />
+        </Button>
+      </Border>
+      <View style={bs.ph_3x}>
+        <Text bold color={colors.black} size={45}>
+          {this.state.title}
+        </Text>
+      </View>
+    </View>
   );
 
   // Content
@@ -70,7 +74,6 @@ class Detail extends Component {
               {strings.cardDetail}
             </Text>
           </CardHeader>
-          <Image uri={images.user_img_url} style={styles.icon} />
           <Text color={colors.black}>{Global.getRandom(500)}</Text>
           <Image file={images.user_img} style={styles.icon} />
         </Card>
