@@ -17,7 +17,7 @@ import { setTheme } from "../../redux/actions/theme.actions";
 import { setLanguage } from "../../redux/actions/language.actions";
 
 //Components
-import { Container, Card } from "../../components/common";
+import { Container, Card, Loader } from "../../components/common";
 import { Icon, Text, Button, Border, Scroll } from "../../components/controls";
 
 //Styling
@@ -68,7 +68,9 @@ class Home extends Component {
     if (localTheme) {
       dispatch(setTheme(localTheme.data));
     }
-    this.setState({ loading: false });
+    setTimeout(() => {
+      this.setState({ loading: false });
+    }, 2500);
   };
 
   setLanguage = () => {
@@ -105,9 +107,7 @@ class Home extends Component {
   // Loading
   renderLoading = () => (
     <View style={styles.loader}>
-      <Text bold color={colors.black} size={44}>
-        {strings.loading}
-      </Text>
+      <Loader />
     </View>
   );
 

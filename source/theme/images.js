@@ -1,6 +1,6 @@
 const images = {
   user_img: require("@res/images/user.png"),
-  user_img_url: "https://media.giphy.com/media/GEsoqZDGVoisw/giphy.gif"
+  loader: require("@res/animation/loading.json")
   // bg_splash: require('@res/images/bg_splash.png'),
   // bg_tab_overlay_left: require('@res/images/bg_tab_overlay_left.png'),
   // bg_tab_overlay_right: require('@res/images/bg_tab_overlay_right.png'),

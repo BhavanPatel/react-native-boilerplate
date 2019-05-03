@@ -138,6 +138,7 @@ android {
 }
 
 dependencies {
+    implementation project(':lottie-react-native')
     implementation project(':react-native-localization')
     implementation project(':react-native-fast-image')
     implementation project(':react-native-vector-icons')
